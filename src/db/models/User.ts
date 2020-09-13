@@ -1,8 +1,25 @@
-import {DataTypes, Model, InitOptions, Sequelize} from 'sequelize';
+import {DataTypes, Model, Sequelize, Optional, CreateOptions} from 'sequelize';
 
-class User extends Model {}
+interface UserAttributes {
+    id: number;
+    email: string;
+    password: string;
+}
+
+interface UserCreationAttributes extends Optional<UserAttributes, "id"> {}
+
+class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+    public id!: number;
+    public email!: string;
+    public password!: string;
+}
 
 export const initUserModel = (db: Sequelize) => User.init({
+    id: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        autoIncrement: true,
+        primaryKey: true,
+    },
     email: {
         type: DataTypes.STRING,
         allowNull: false
@@ -12,7 +29,13 @@ export const initUserModel = (db: Sequelize) => User.init({
         allowNull: false
     }
 }, {
-    sequelize: db
+    tableName: "users",
+    sequelize: db,
+    hooks: {
+        beforeCreate(user: User) {
+            console.log(user);
+        }
+    }
 });
 
 export default User;
