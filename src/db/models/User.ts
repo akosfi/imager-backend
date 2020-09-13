@@ -1,10 +1,8 @@
-import db from "../index";
-
-import { DataTypes, Model } from 'sequelize';
+import {DataTypes, Model, InitOptions, Sequelize} from 'sequelize';
 
 class User extends Model {}
 
-User.init({
+export const initUserModel = (db: Sequelize) => User.init({
     email: {
         type: DataTypes.STRING,
         allowNull: false
@@ -14,8 +12,7 @@ User.init({
         allowNull: false
     }
 }, {
-    db,
-    modelName: 'User'
+    sequelize: db
 });
 
 export default User;

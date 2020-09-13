@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="604a3886-38df-4b77-b3f3-80ede8d9933c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/db/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db/models/User.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/models/User.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +46,8 @@
       <updated>1599853323082</updated>
       <workItem from="1599853324180" duration="2390000" />
       <workItem from="1599856399459" duration="1126000" />
+      <workItem from="1599898951331" duration="16000" />
+      <workItem from="1599994009434" duration="1545000" />
     </task>
     <servers />
   </component>
@@ -55,9 +55,17 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2576" y="257" width="530" height="598" key="FileChooserDialogImpl" timestamp="1599898963006">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2576" y="257" width="530" height="598" key="FileChooserDialogImpl/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1599898963006" />
     <state x="2211" y="103" key="SettingsEditor" timestamp="1599854049105">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2211" y="103" key="SettingsEditor/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1599854049105" />
+    <state x="2467" y="239" width="759" height="634" key="find.popup" timestamp="1599994844078">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2467" y="239" width="759" height="634" key="find.popup/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1599994844078" />
   </component>
 </project>
