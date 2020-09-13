@@ -10,6 +10,7 @@ import {
 } from "../utils/JWTUtils";
 import {createResponseBody} from "../utils/RequestUtils";
 import User from "../db/models/User";
+import UserService from "../services/UserService";
 
 const usersRouter = Router();
 
@@ -20,7 +21,7 @@ const getLoggedInUser = async (req: Request, res: Response) => {
     const {email: _email} = accessTokenPayload;
 
     try {
-        const user: User | null = await User.findOne({ where: {email: _email} });
+        const user: User | null = await UserService.findOneByEmail(_email);
         if(!user) new Error("User not found.");
 
         const {email, id} = user;
@@ -38,7 +39,7 @@ const loginUser = async (req: Request, res: Response) => {
     if(!_email || !_password) return res.status(400).send(createResponseBody(400, {error: "Missing email or password."}));
 
     try {
-        const user: User | null = await User.findOne({ where: {email: _email} });
+        const user: User | null = await UserService.findOneByEmail(_email);
         if(user === null) new Error("User not found.");
 
         const {email, id} = user as User;
