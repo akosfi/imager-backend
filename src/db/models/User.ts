@@ -1,4 +1,5 @@
-import {DataTypes, Model, Sequelize, Optional, CreateOptions} from 'sequelize';
+import {DataTypes, Model, Sequelize, Optional} from 'sequelize';
+import bcrypt from "bcrypt";
 
 interface UserAttributes {
     id: number;
@@ -22,7 +23,8 @@ export const initUserModel = (db: Sequelize) => User.init({
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     password: {
         type: DataTypes.STRING,
@@ -33,7 +35,8 @@ export const initUserModel = (db: Sequelize) => User.init({
     sequelize: db,
     hooks: {
         beforeCreate(user: User) {
-            console.log(user);
+            const salt = bcrypt.genSaltSync();
+            user.password = bcrypt.hashSync(user.password, salt);
         }
     }
 });

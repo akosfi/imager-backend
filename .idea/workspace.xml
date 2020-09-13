@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="604a3886-38df-4b77-b3f3-80ede8d9933c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/services/UserService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/UserController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/UserController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/models/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
       <workItem from="1599853324180" duration="2390000" />
       <workItem from="1599856399459" duration="1126000" />
       <workItem from="1599898951331" duration="16000" />
-      <workItem from="1599994009434" duration="9657000" />
+      <workItem from="1599994009434" duration="10162000" />
     </task>
     <task id="LOCAL-00001" summary="db init typescript bug">
       <created>1599995668470</created>
@@ -72,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600003475532</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added UserService">
+      <created>1600003686810</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600003686810</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,13 +92,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="db init typescript bug" />
     <MESSAGE value="jwt auth basics" />
-    <option name="LAST_COMMIT_MESSAGE" value="jwt auth basics" />
+    <MESSAGE value="added UserService" />
+    <option name="LAST_COMMIT_MESSAGE" value="added UserService" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2" timestamp="1600003475442">
+    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2" timestamp="1600003686763">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600003475442" />
+    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600003686763" />
     <state x="2576" y="257" width="530" height="598" key="FileChooserDialogImpl" timestamp="1599898963006">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -99,10 +108,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2211" y="103" key="SettingsEditor/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1599999299947" />
-    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1599999304847">
+    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1600003690422">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1599999304847" />
+    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600003690422" />
     <state x="2467" y="239" width="759" height="634" key="find.popup" timestamp="1600003661097">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
