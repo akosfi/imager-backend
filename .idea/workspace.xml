@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="604a3886-38df-4b77-b3f3-80ede8d9933c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/middlewares/upload.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/@types/express/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/express/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/ImagesController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ImagesController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ImageService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ImageService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/upload.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +23,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.prettier.on.save" value="true" />
@@ -57,7 +51,7 @@
       <workItem from="1599994009434" duration="10356000" />
       <workItem from="1600022866683" duration="90000" />
       <workItem from="1600071536349" duration="7000" />
-      <workItem from="1600357450194" duration="4651000" />
+      <workItem from="1600357450194" duration="4941000" />
     </task>
     <task id="LOCAL-00001" summary="db init typescript bug">
       <created>1599995668470</created>
@@ -108,7 +102,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600359447741</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="upload file middleware">
+      <created>1600362123333</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600362123333</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added uuid types">
+      <created>1600362337850</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1600362337850</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,25 +132,30 @@
     <MESSAGE value="unique user email" />
     <MESSAGE value="added image model" />
     <MESSAGE value="custom request type" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom request type" />
+    <MESSAGE value="upload file middleware" />
+    <MESSAGE value="added uuid types" />
+    <option name="LAST_COMMIT_MESSAGE" value="added uuid types" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2" timestamp="1600359447675">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="373" y="82" width="1096" height="1011" key="CommitChangelistDialog2" timestamp="1600362337765">
+      <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600359447675" />
-    <state x="2576" y="257" width="530" height="598" key="FileChooserDialogImpl" timestamp="1599898963006">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="373" y="82" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@0.34.1920.1046" timestamp="1600362337765" />
+    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600362123254" />
+    <state x="656" y="283" width="530" height="598" key="FileChooserDialogImpl" timestamp="1600362364240">
+      <screen x="0" y="34" width="1920" height="1046" />
     </state>
+    <state x="656" y="283" key="FileChooserDialogImpl/1920.0.1920.1080/0.34.1920.1046@0.34.1920.1046" timestamp="1600362364240" />
     <state x="2576" y="257" width="530" height="598" key="FileChooserDialogImpl/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1599898963006" />
     <state x="2211" y="103" key="SettingsEditor" timestamp="1599999299947">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2211" y="103" key="SettingsEditor/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1599999299947" />
-    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1600003690422">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="421" y="256" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1600362341432">
+      <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600003690422" />
+    <state x="421" y="256" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@0.34.1920.1046" timestamp="1600362341432" />
+    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600362222377" />
     <state x="2467" y="239" width="759" height="634" key="find.popup" timestamp="1600003661097">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -151,5 +164,9 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2426" y="251" key="run.anything.popup/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600001709865" />
+    <state x="2425" y="45" key="search.everywhere.popup" timestamp="1600362277630">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2425" y="45" key="search.everywhere.popup/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600362277630" />
   </component>
 </project>

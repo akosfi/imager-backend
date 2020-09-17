@@ -5,7 +5,7 @@ import {rename, unlink} from "fs";
 import { extname, join } from "path";
 import {createResponseBody} from "../utils/RequestUtils";
 
-const multerUpload = multer().single('../public/images/' )
+const multerUpload = multer().single('./public/images/' )
 
 export const uploadImageMiddleware = (req: Request, res: Response, next: NextFunction) => {
     multerUpload(req, res,  (err: any) => {
