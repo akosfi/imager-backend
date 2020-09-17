@@ -7,10 +7,13 @@ export const findAll = async (options: FindOptions<Image>) => await Image.findAl
 
 export const findAllByUser = async (_user_id: number) => await Image.findAll({where: {user_id: _user_id}})
 
+export const createImage = async(url: string, user_id: number) => await Image.create({ url, user_id })
+
 const ImageService = {
     findOne,
     findAll,
-    findAllByUser
+    findAllByUser,
+    createImage
 };
 
 export default ImageService;
