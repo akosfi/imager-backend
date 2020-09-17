@@ -1,5 +1,6 @@
-import {DataTypes, Model, Sequelize, Optional} from 'sequelize';
+import {DataTypes, Model, Sequelize, Optional, Association} from 'sequelize';
 import bcrypt from "bcrypt";
+import Image from "./Image";
 
 interface UserAttributes {
     id: number;
@@ -13,6 +14,12 @@ class User extends Model<UserAttributes, UserCreationAttributes> implements User
     public id!: number;
     public email!: string;
     public password!: string;
+
+    public readonly images?: Image[]; // Note this is optional since it's only populated when explicitly requested in code
+
+    public static associations: {
+        projects: Association<User, Image>;
+    };
 }
 
 export const initUserModel = (db: Sequelize) => User.init({
