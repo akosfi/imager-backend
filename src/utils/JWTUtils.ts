@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import {Request, Response} from "express";
 import {createResponseBody} from "./RequestUtils";
+import User from "../db/models/User";
 
 export type UserTokenPayload = {
     email: string;
@@ -37,7 +38,7 @@ export const verifyJWT = (tokenType: TokenType, token: string) => {
 }
 
 //TODO redo check
-export const getBearerTokenFromHeader = (req: Request) => {
+export const getBearerTokenFromHeader = (req: Request): UserTokenPayload => {
     const authorizationHeader = req.headers.authorization || "";
     const accessToken = authorizationHeader.substring(7, authorizationHeader.length);
 

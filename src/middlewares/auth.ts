@@ -1,11 +1,14 @@
 import {NextFunction, Request, Response} from "express";
 import {createResponseBody} from "../utils/RequestUtils";
-import {getBearerTokenFromHeader, TokenType, verifyJWT} from "../utils/JWTUtils";
+import {getBearerTokenFromHeader, UserTokenPayload} from "../utils/JWTUtils";
 
 const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
-    const accessTokenPayload = getBearerTokenFromHeader(req);
+    const accessTokenPayload: UserTokenPayload = getBearerTokenFromHeader(req);
 
     if(!accessTokenPayload) return res.status(401).send(createResponseBody(401, {error: "Invalid JWT"}));
+
+    req.user = accessTokenPayload;
+
     next();
 }
 

@@ -15,10 +15,7 @@ import UserService from "../services/UserService";
 const usersRouter = Router();
 
 const getLoggedInUser = async (req: Request, res: Response) => {
-    const accessTokenPayload: UserTokenPayload = getBearerTokenFromHeader(req);
-    if(!accessTokenPayload) return res.status(401).send(createResponseBody(401, {error: "Invalid JWT"}));
-
-    const {email: _email} = accessTokenPayload;
+    const { user: { email: _email } } = req;
 
     try {
         const user: User | null = await UserService.findOneByEmail(_email);
@@ -55,7 +52,7 @@ const loginUser = async (req: Request, res: Response) => {
 }
 
 const registerUser = async (req: Request, res: Response) => {
-    const {email: _email, password: _password} = req.body;
+    const { email: _email, password: _password } = req.body;
 
     if(!_email || !_password) return res.status(400).send(createResponseBody(400, {error: "Missing email or password."}));
 
@@ -76,10 +73,10 @@ const registerUser = async (req: Request, res: Response) => {
 }
 
 const refreshToken = (req: Request, res: Response) => {
-    const refreshToken = req.cookies.jwt;
+    const { cookies: { jwt: refreshToken }} = req;
 
     const refreshTokenPayload = verifyJWT(TokenType.REFRESH, refreshToken);
-    const accessTokenPayload = getBearerTokenFromHeader(request);
+    const accessTokenPayload = req.user;
 
     if(!accessTokenPayload || !refreshTokenPayload) return res.status(401).send(createResponseBody(401, {error: "Invalid JWT"}));
 
