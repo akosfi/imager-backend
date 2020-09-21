@@ -88,8 +88,8 @@ const refreshToken = (req: Request, res: Response) => {
 
 usersRouter.get('/me', authMiddleware, getLoggedInUser);
 usersRouter.get('/refresh', authMiddleware, refreshToken);
-usersRouter.get('/login', inverseAuthMiddleware, loginUser);
 //
+usersRouter.post('/login', inverseAuthMiddleware, loginUser);
 usersRouter.post('/register', inverseAuthMiddleware, registerUser);
 
 export default usersRouter;

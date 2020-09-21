@@ -44,7 +44,6 @@ export const getBearerTokenFromHeader = (req: Request): UserTokenPayload => {
 
     if(!authorizationHeader.startsWith("Bearer ")) return null;
 
-    console.log(verifyJWT(TokenType.ACCESS, accessToken));
     const payload = verifyJWT(TokenType.ACCESS, accessToken);
     if(payload === null) return null;
 

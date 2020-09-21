@@ -5,7 +5,7 @@ import {rename, unlink} from "fs";
 import { extname, join } from "path";
 import {createResponseBody} from "../utils/RequestUtils";
 
-const multerUpload = multer().single('./public/images/' )
+const multerUpload = multer({dest: "./uploads"}).single('file' )
 
 export const uploadImageMiddleware = (req: Request, res: Response, next: NextFunction) => {
     multerUpload(req, res,  (err: any) => {
@@ -15,17 +15,15 @@ export const uploadImageMiddleware = (req: Request, res: Response, next: NextFun
 
         const uniqueFileName = uuidv4();
         const tempPath = req.file.path;
-        const targetPath = join(__dirname, `../uploads/${uniqueFileName}.png`);
+        const targetPath = join(__dirname, `../public/${uniqueFileName}.png`);
 
-        if (extname(req.file.originalname).toLowerCase() === ".png") {
-            rename(tempPath, targetPath, err => {
-                if (err) return res.status(400).send(createResponseBody(400, { error: err }))
+        const fileExt = extname(req.file.originalname).toLowerCase();
 
-                req.uploaded_file_url = targetPath;
-                next();
-            });
+        if (fileExt === ".png" || fileExt === ".jpg") {
+            req.uploaded_file_url = targetPath;
+            next();
         } else {
-            unlink(tempPath, err => {
+            return unlink(tempPath, err => {
                 if (err) return res.status(400).send(createResponseBody(400, { error: err }))
 
                 return res.status(400).send(createResponseBody(400, { error: "Only png files are allowed" }));

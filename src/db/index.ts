@@ -3,7 +3,7 @@ import User, {initUserModel} from "./models/User";
 import Image, {initImageModel} from "./models/Image";
 import createAssociations from "./models/_associations";
 
-const db = new Sequelize('sqlite::memory:');
+const db = new Sequelize({ dialect: "sqlite", storage: "./db/db.sqlite" });
 
 
 export const initDB = () => new Promise(((resolve) => {
