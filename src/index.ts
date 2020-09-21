@@ -1,3 +1,5 @@
+import * as path from "path";
+
 require('dotenv').config();
 
 import express from "express";
@@ -14,9 +16,12 @@ const corsOptions: CorsOptions= {
 
 const app = express();
 
+console.log(path.join(__dirname, '../public'));
+
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
+app.use('/public', express.static(path.join(__dirname, '../public')));
 app.use('/api', apiRouter);
 app.get('/health-check', (req, res, next) => res.send("Hey!"));
 
