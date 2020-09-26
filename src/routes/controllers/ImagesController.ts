@@ -1,9 +1,16 @@
 import {Router, Request, Response} from "express";
-import ImageService from "../services/ImageService";
-import {createResponseBody} from "../utils/RequestUtils";
-import {uploadImageMiddleware} from "../middlewares/upload";
-import authMiddleware from "../middlewares/auth";
+import ImageService from "../../services/ImageService";
+import {createResponseBody} from "../../utils/RequestUtils";
+import {uploadImageMiddleware} from "../../middlewares/upload";
+import authMiddleware from "../../middlewares/auth";
 const imagesRouter = Router();
+
+export enum RouteConfig {
+    ROOT = "/images",
+    IMAGES_SHOW = "/",
+    IMAGES_INDEX = "/:id",
+    IMAGES_CREATE = "/",
+}
 
 const getAllImage = async (req: Request, res: Response) => {
     const { user: { id: user_id } } = req;
@@ -43,8 +50,8 @@ const postImage = async (req: Request, res: Response) => {
     }
 }
 
-imagesRouter.get('/', authMiddleware, getAllImage);
-imagesRouter.get('/:id/', authMiddleware, getImage);
-imagesRouter.post('/', authMiddleware, uploadImageMiddleware, postImage);
+imagesRouter.get(RouteConfig.IMAGES_SHOW, authMiddleware, getAllImage);
+imagesRouter.get(RouteConfig.IMAGES_INDEX, authMiddleware, getImage);
+imagesRouter.post(RouteConfig.IMAGES_CREATE, authMiddleware, uploadImageMiddleware, postImage);
 
 export default imagesRouter;

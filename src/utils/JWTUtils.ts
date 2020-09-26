@@ -56,6 +56,6 @@ export const getBearerTokenFromHeader = (req: Request): UserTokenPayload => {
 }
 
 export const sendTokenResponse = (res: Response, newRefreshToken: string, newAccessToken: string) => {
-    res.cookie("jwt", newRefreshToken, {secure: true, httpOnly: true});
+    res.cookie("jwt", newRefreshToken, {secure: false, httpOnly: true});
     return res.status(200).send(createResponseBody(200, {token: newAccessToken}));
 }

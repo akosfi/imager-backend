@@ -11,7 +11,8 @@ import apiRouter from "./routes";
 import {initDB} from "./db";
 
 const corsOptions: CorsOptions= {
-   origin: process.env.CLIENT_APP
+   origin: process.env.CLIENT_APP,
+   credentials: true
 }
 
 const app = express();

@@ -1,5 +1,5 @@
 import {request, Request, Response, Router} from "express";
-import authMiddleware, {inverseAuthMiddleware} from "../middlewares/auth";
+import authMiddleware, {inverseAuthMiddleware} from "../../middlewares/auth";
 import {
     getBearerTokenFromHeader,
     sendTokenResponse,
@@ -7,12 +7,20 @@ import {
     TokenType,
     UserTokenPayload,
     verifyJWT
-} from "../utils/JWTUtils";
-import {createResponseBody} from "../utils/RequestUtils";
-import User from "../db/models/User";
-import UserService from "../services/UserService";
+} from "../../utils/JWTUtils";
+import {createResponseBody} from "../../utils/RequestUtils";
+import User from "../../db/models/User";
+import UserService from "../../services/UserService";
 
 const usersRouter = Router();
+
+export enum RouteConfig {
+    ROOT = "/users",
+    USERS_ME = "/me",
+    USERS_TOKEN_REFRESH = "/refresh",
+    USERS_LOGIN = "/login",
+    USERS_REGISTER = "/register",
+}
 
 const getLoggedInUser = async (req: Request, res: Response) => {
     const { user: { email: _email } } = req;
@@ -72,24 +80,34 @@ const registerUser = async (req: Request, res: Response) => {
     }
 }
 
-const refreshToken = (req: Request, res: Response) => {
-    const { cookies: { jwt: refreshToken }} = req;
+const refreshToken = async (req: Request, res: Response) => {
+    const { cookies: { jwt: refreshToken }, user: {email: _email}} = req;
 
     const refreshTokenPayload = verifyJWT(TokenType.REFRESH, refreshToken);
     const accessTokenPayload = req.user;
 
     if(!accessTokenPayload || !refreshTokenPayload) return res.status(401).send(createResponseBody(401, {error: "Invalid JWT"}));
 
-    const newAccessToken = signJWT(TokenType.ACCESS, {email: "TODO@TODO.TODO", id: 1});
-    const newRefreshToken = signJWT(TokenType.REFRESH, {email: "TODO@TODO.TODO", id: 1});
+    try {
+        const user: User | null = await UserService.findOneByEmail(_email);
+        if(user === null) new Error("User not found.");
 
-    return sendTokenResponse(res, newRefreshToken, newAccessToken);
+        const {email, id} = user as User;
+
+        const newAccessToken = signJWT(TokenType.ACCESS, {email, id});
+        const newRefreshToken = signJWT(TokenType.REFRESH, {email, id});
+
+        return sendTokenResponse(res, newRefreshToken, newAccessToken);
+    }
+    catch(e) {
+        return res.status(404).send(createResponseBody(404, {error: "Failed to find user."}));
+    }
 }
 
-usersRouter.get('/me', authMiddleware, getLoggedInUser);
-usersRouter.get('/refresh', authMiddleware, refreshToken);
+usersRouter.get(RouteConfig.USERS_ME, authMiddleware, getLoggedInUser);
+usersRouter.get(RouteConfig.USERS_TOKEN_REFRESH, authMiddleware, refreshToken);
 //
-usersRouter.post('/login', inverseAuthMiddleware, loginUser);
-usersRouter.post('/register', inverseAuthMiddleware, registerUser);
+usersRouter.post(RouteConfig.USERS_LOGIN, inverseAuthMiddleware, loginUser);
+usersRouter.post(RouteConfig.USERS_REGISTER, inverseAuthMiddleware, registerUser);
 
 export default usersRouter;
