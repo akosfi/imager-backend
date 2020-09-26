@@ -4,7 +4,17 @@ import { unlink } from "fs";
 import { extname } from "path";
 import { createResponseBody } from "../utils/RequestUtils";
 
-const multerUpload = multer({dest: "./public"}).single('file' )
+
+const multerStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "./public")
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + extname(file.originalname))
+    },
+});
+
+const multerUpload = multer({storage: multerStorage}).single('file' )
 
 export const uploadImageMiddleware = (req: Request, res: Response, next: NextFunction) => {
     multerUpload(req, res,  (err: any) => {

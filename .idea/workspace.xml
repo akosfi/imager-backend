@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="604a3886-38df-4b77-b3f3-80ede8d9933c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/ImagesController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/controllers/ImagesController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/UserController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/controllers/UserController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/JWTUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/JWTUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/upload.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +60,7 @@
       <workItem from="1600688639750" duration="3586000" />
       <workItem from="1600698970105" duration="105000" />
       <workItem from="1600929602282" duration="1178000" />
-      <workItem from="1601119712566" duration="1626000" />
+      <workItem from="1601119712566" duration="1929000" />
     </task>
     <task id="LOCAL-00001" summary="db init typescript bug">
       <created>1599995668470</created>
@@ -150,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600692352382</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="jwt fix">
+      <created>1601129328051</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1601129328051</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,18 +174,19 @@
     <MESSAGE value="file upload location" />
     <MESSAGE value="added persistent db" />
     <MESSAGE value="upload fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload fix" />
+    <MESSAGE value="jwt fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="jwt fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2365" y="340" width="953" height="431" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600688744201">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2365" y="340" width="953" height="431" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600688744201" />
-    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2" timestamp="1600692352287">
+    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2" timestamp="1601129327940">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="373" y="69" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@0.34.1920.1046" timestamp="1600362403089" />
-    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600692352287" />
+    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1601129327940" />
     <state x="656" y="283" width="530" height="598" key="FileChooserDialogImpl" timestamp="1601119724518">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
