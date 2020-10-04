@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t akosfi/imager-backend
+
+script:
+  - docker run akosfi/imager-backend npm run test
