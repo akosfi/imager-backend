@@ -3,6 +3,8 @@ import {initDB} from "./db";
 
 const PORT = process.env.PORT || 8080;
 
+console.log("Hey");
+
 initDB()
     .then(() => {
        app.listen(PORT, () => {
