@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="604a3886-38df-4b77-b3f3-80ede8d9933c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/controllers/health_check_contoller/HealthCheckController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/controllers/health_check_contoller/__tests__/HealthCheckController.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +66,7 @@
       <workItem from="1600929602282" duration="1178000" />
       <workItem from="1601119712566" duration="3369000" />
       <workItem from="1601275593088" duration="14000" />
-      <workItem from="1601797221002" duration="3062000" />
+      <workItem from="1601797221002" duration="3624000" />
     </task>
     <task id="LOCAL-00001" summary="db init typescript bug">
       <created>1599995668470</created>
@@ -178,7 +173,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601798516709</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added tests">
+      <created>1601800321917</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1601800321917</updated>
+    </task>
+    <task id="LOCAL-00017" summary="small modification">
+      <created>1601800677985</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1601800677985</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,18 +211,20 @@
     <MESSAGE value="jwt fix" />
     <MESSAGE value="file upload fix" />
     <MESSAGE value="added basic Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="added basic Dockerfile" />
+    <MESSAGE value="added tests" />
+    <MESSAGE value="small modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="small modification" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2365" y="340" width="953" height="431" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601798144230">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2365" y="340" width="953" height="431" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1601798144230" />
-    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2" timestamp="1601798516572">
+    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2" timestamp="1601800677941">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="373" y="69" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@0.34.1920.1046" timestamp="1600362403089" />
-    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1601798516572" />
+    <state x="2293" y="50" width="1096" height="1011" key="CommitChangelistDialog2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1601800677941" />
     <state x="656" y="283" width="530" height="598" key="FileChooserDialogImpl" timestamp="1601119724518">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
@@ -223,11 +234,11 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2211" y="103" key="SettingsEditor/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600689077307" />
-    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1600689052359">
+    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1601800416988">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="421" y="256" width="1000" height="654" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@0.34.1920.1046" timestamp="1600362409149" />
-    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600689052359" />
+    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1601800416988" />
     <state x="2467" y="239" width="759" height="634" key="find.popup" timestamp="1601129051288">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
