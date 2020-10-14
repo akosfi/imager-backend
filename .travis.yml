@@ -8,7 +8,12 @@ before_install:
 script:
   - docker run akosfi/imager-backend npm run test
 
+jobs:
+  include:
+    - stage: log
+      script:
+        - docker run akosfi/imager-backend npm run log
+
 stages:
-  - name: deploy
+  - name: log
     if: branch = master
-      - docker run akosfi/imager-backend npm run log
