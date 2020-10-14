@@ -1,9 +1,9 @@
-import User from "../db/models/User";
+import User from '../db/models/User'
 
-export const findOneByEmail = async (email: string) => await User.findOne({ where: {email} });
+export const findOneByEmail = async (email: string) => await User.findOne({ where: { email } })
 
 const UserService = {
-    findOneByEmail
-};
+  findOneByEmail
+}
 
-export default UserService;
+export default UserService

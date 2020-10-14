@@ -8,6 +8,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "lint": "./node_modules/.bin/eslint src/**/*.ts",
+    "lint-fix": "./node_modules/.bin/eslint src/**/*.ts --fix",
     "test": "jest",
     "log": "node log.js"
   },
