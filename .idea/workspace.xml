@@ -26,8 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="604a3886-38df-4b77-b3f3-80ede8d9933c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.js" beforeDir="false" afterPath="$PROJECT_DIR$/log.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,7 @@
       <workItem from="1601119712566" duration="3369000" />
       <workItem from="1601275593088" duration="14000" />
       <workItem from="1601797221002" duration="3062000" />
-      <workItem from="1602701362343" duration="855000" />
+      <workItem from="1602701362343" duration="648000" />
     </task>
     <task id="LOCAL-00001" summary="db init typescript bug">
       <created>1599995668470</created>

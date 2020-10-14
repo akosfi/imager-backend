@@ -13,7 +13,19 @@ jobs:
     - stage: log
       script:
         - docker run akosfi/imager-backend npm run log
+    - stage: lint
+      script:
+        - docker run akosfi/imager-backend npm run lint
+    - stage: test
+      script:
+        - docker run akosfi/imager-backend npm run test
+    - stage: deploy
+      script:
+        - docker run akosfi/imager-backend npm run log
 
 stages:
-  - name: log
-    if: branch = master
+  - log
+  - lint
+  - test
+  - name: deploy
+    if: (type = push AND branch IN (master, staging))
