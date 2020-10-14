@@ -26,17 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="604a3886-38df-4b77-b3f3-80ede8d9933c" name="Default Changelist" comment="added lint">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/upload.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ImageService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ImageService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/UserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UserService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/JWTUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/JWTUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/RequestUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/RequestUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.js" beforeDir="false" afterPath="$PROJECT_DIR$/log.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,11 +284,12 @@
     </state>
     <state x="2211" y="103" key="SettingsEditor/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600689077307" />
     <state x="348" y="139" key="SettingsEditor/67.27.1853.1173@67.27.1853.1173" timestamp="1602704656843" />
-    <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1600689052359">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="473" y="276" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1602705092648">
+      <screen x="67" y="27" width="1853" height="1173" />
     </state>
     <state x="421" y="256" width="1000" height="654" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@0.34.1920.1046" timestamp="1600362409149" />
     <state x="2341" y="229" width="1000" height="654" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1600689052359" />
+    <state x="473" y="276" key="Vcs.Push.Dialog.v2/67.27.1853.1173@67.27.1853.1173" timestamp="1602705092648" />
     <state x="2467" y="239" width="759" height="634" key="find.popup" timestamp="1601129051288">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
