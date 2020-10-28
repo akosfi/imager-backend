@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build the tagged Docker image
-          run: docker build . --file Dockerfile --tag akosfi/imager-backend:latest
+          run: docker build -t akosfi/imager-backend .
 
       - name: Get the output time
         run: echo "Echo example."
