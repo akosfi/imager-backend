@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -12,5 +15,3 @@ jobs:
         run: docker build -t akosfi/imager-backend:latest .
       - name: Push the Docker image
         run: docker push akosfi/imager-backend:latest
-      - name: Test
-        run: docker run akosfi/imager-backend npm run test
