@@ -8,8 +8,9 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build the tagged Docker image
-        run: docker build -t akosfi/imager-backend .
-
-      - name: Get the output time
-        run: echo "Echo example."
+      - name: Build
+        run: docker build -t akosfi/imager-backend:latest .
+      - name: Lint
+        run: docker run akosfi/imager-backend npm run lint
+      - name: Test
+        run: docker run akosfi/imager-backend npm run lint
