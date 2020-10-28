@@ -17,8 +17,8 @@ jobs:
       script:
         - docker run akosfi/imager-backend npm run test
     - stage: deploy
-      script:
-        - docker run akosfi/imager-backend npm run log
+      script: bash deploy.sh
+
 
 stages:
   - log
