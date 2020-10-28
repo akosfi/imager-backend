@@ -13,4 +13,4 @@ jobs:
       - name: Lint
         run: docker run akosfi/imager-backend npm run lint
       - name: Test
-        run: docker run akosfi/imager-backend npm run lint
+        run: docker run akosfi/imager-backend npm run test
