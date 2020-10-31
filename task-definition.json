@@ -1,6 +1,6 @@
 {
   "family": "imager",
-  "executionRoleArn": "arn:aws:iam:eu-west-3:120646787562:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::120646787562:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "imager-backend",
