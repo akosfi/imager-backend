@@ -43,6 +43,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: dc-dojo-service-github
-          cluster: dcdojo-cluster
+          service: imager-backend-dev-service
+          cluster: imager
           wait-for-service-stability: true
