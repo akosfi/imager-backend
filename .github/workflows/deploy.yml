@@ -20,6 +20,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-3
 
+      if: contains(github.ref, "master")
+      steps:
+        - run: echo "I only run if the branch has release in its name!"
+
 
 
   deploy-dev:
