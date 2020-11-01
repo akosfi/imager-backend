@@ -33,6 +33,13 @@ jobs:
           docker push $DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG"
 
+      - name: Fill in the new image ID in the Amazon ECS task definition
+          id: task-def
+          uses: aws-actions/amazon-ecs-render-task-definition@v1
+          with:
+            task-definition: task-definition.json
+            container-name: imager-backend
+            image: ${{ steps.build-image.outputs.image }}
 
   deploy-dev:
     runs-on: ubuntu-latest
