@@ -1,5 +1,5 @@
 {
-  "family": "imager",
+  "family": "imager-backend",
   "executionRoleArn": "arn:aws:iam::120646787562:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
