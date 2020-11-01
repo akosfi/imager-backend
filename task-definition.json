@@ -19,7 +19,7 @@
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "/ecs/imager",
-          "awslogs-region": "us-west-3",
+          "awslogs-region": "eu-west-3",
           "awslogs-stream-prefix": "ecs"
         }
       }
