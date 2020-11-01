@@ -6,8 +6,6 @@ on:
 jobs:
   prepare-deploy:
     runs-on: ubuntu-latest
-    outputs:
-      image: ${{ steps.build-image.outputs.image }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,6 +20,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-3
 
+
+
+  deploy-dev:
+    runs-on: ubuntu-latest
+    needs: [ prepare-deploy ]
+    if: github.ref == 'refs/heads/master'
+    steps:
+
       - name: Build, tag, and push image to Docker Hub
         id: build-image
         env:
@@ -33,52 +39,18 @@ jobs:
           docker push $DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG"
 
-
-  deploy-dev:
-    runs-on: ubuntu-latest
-    needs: [ prepare-deploy ]
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - name: test echo
-        run: echo "${{ needs.prepare-deploy.outputs.image }}"
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
           container-name: imager-backend
-          image: ${{ needs.prepare-deploy.outputs.image }}
+          image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: imager-backend-dev-service
-          cluster: imager
-          wait-for-service-stability: true
-
-  deploy-staging:
-    runs-on: ubuntu-latest
-    needs: [ prepare-deploy ]
-    if: github.ref == 'refs/heads/staging'
-    steps:
-      - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: ${{ needs.prepare-deploy.outputs.task-definition }}
-          service: imager-backend-dev-service
-          cluster: imager
-          wait-for-service-stability: true
-
-  deploy-production:
-    runs-on: ubuntu-latest
-    needs: [ prepare-deploy ]
-    if: github.ref == 'refs/heads/production'
-    steps:
-      - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: ${{ needs.prepare-deploy.outputs.task-definition }}
           service: imager-backend-dev-service
           cluster: imager
           wait-for-service-stability: true
