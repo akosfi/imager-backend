@@ -13,7 +13,7 @@
           "containerPort": 8080
         }
       ],
-      "memory": 1024,
+      "memory": 512,
       "essential": true,
       "logConfiguration": {
         "logDriver": "awslogs",
@@ -30,5 +30,5 @@
   ],
   "networkMode": null,
   "cpu": "1024",
-  "memory": "2048"
+  "memory": "512"
 }
