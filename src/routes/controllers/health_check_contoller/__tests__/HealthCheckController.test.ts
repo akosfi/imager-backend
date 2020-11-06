@@ -6,7 +6,7 @@ describe('HealthCheckController Endpoints', () => {
         const res = await request(app)
             .get('/api/health-check/')
             .send();
-        expect(res.status).toEqual(201);
+        expect(res.status).toEqual(200);
         expect(res.body.status).toStrictEqual("Hey!");
     })
 })
