@@ -6,9 +6,9 @@ export enum RouteConfig {
     TEST = "/test",
 }
 
-const getServerHealth = (req: Request, res: Response) => res.status(201).send({"status": "Hey!"});
+const getServerHealth = (req: Request, res: Response) => res.status(200).send({"status": "OK!"});
 
-const getNewTestMessage = (req: Request, res: Response) => res.status(201).send({"message": "Hey my man!"});
+const getNewTestMessage = (req: Request, res: Response) => res.status(200).send({"message": "Hey my man!"});
 
 healthCheckRouter.use(RouteConfig.ROOT, getServerHealth);
 healthCheckRouter.use(RouteConfig.TEST, getNewTestMessage);
