@@ -30,18 +30,30 @@ jobs:
           docker build -t $DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG .
           docker push $DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG"
-      - name: Fill in the new image ID in the Amazon ECS task definition
-        id: task-def
-        uses: aws-actions/amazon-ecs-render-task-definition@v1
-        with:
-          task-definition: task-definition.json
-          container-name: imager-backend
-          image: ${{ steps.build-image.outputs.image }}
 
-      - name: Deploy Amazon ECS task definition
+      - name: Deploy Amazon ECS task definition to dev cluster
+        if: ${{ github.ref == 'refs/heads/master' }}
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: imager-backend-dev-service
-          cluster: imager
+          service: imager-dev-backend-service
+          cluster: imager-dev
+          wait-for-service-stability: true
+
+      - name: Deploy Amazon ECS task definition to staging cluster
+        if: ${{ github.ref == 'refs/heads/staging' }}
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: imager-staging-backend-service
+          cluster: imager-staging
+          wait-for-service-stability: true
+
+      - name: Deploy Amazon ECS task definition to production cluster
+        if: ${{ github.ref == 'refs/heads/production' }}
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: imager-production-backend-service
+          cluster: imager-production
           wait-for-service-stability: true
