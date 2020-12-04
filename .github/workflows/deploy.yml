@@ -27,7 +27,7 @@ jobs:
           DOCKER_HUB_REPOSITORY: akosfi/imager-backend
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG .
+          docker build -t -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY $DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG .
           docker push $DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG"
 
