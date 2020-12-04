@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 const S3ServiceObject = new S3();
 
 export const S3BucketParams = {
-    Bucket: process.env.AWS_S3_BUCKET_NAME,
+    Bucket: "akosfi",
     CreateBucketConfiguration: { LocationConstraint: "eu-west-3" }
 };
 
